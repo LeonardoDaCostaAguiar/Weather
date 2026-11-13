@@ -1,0 +1,60 @@
+# Xcode
+#
+build/
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+/*.hmap
+*.xccheckout
+*.moved-aside
+/*.xcuserstate
+DerivedData/
+
+# Swift Package Manager
+#
+.swiftpm/
+.build/
+# Dependendo da sua preferência, você pode descomentar a linha abaixo se não quiser versionar pacotes locais:
+# Packages/
+
+# CocoaPods
+#
+Pods/
+*.xcworkspace
+
+# Carthage
+#
+Carthage/Build/
+Carthage/Checkouts/
+
+# Fastlane
+#
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+fastlane/*.zip
+
+# Documentação
+#
+/.docsets/
+.jazzy.yaml
+
+# SwiftLint e Outras Ferramentas de Análise
+#
+.swiftlint.cache
+
+# Configurações de IDEs (VS Code, AppCode)
+#
+.vscode/
+.idea/
+
+# Arquivos do Sistema Operacional (macOS)
+#
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes

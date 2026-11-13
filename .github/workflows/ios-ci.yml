@@ -1,0 +1,35 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Build and test
+    runs-on: xcode-27
+    timeout-minutes: 30
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.2.app/Contents/Developer
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Build and run tests
+        run: >-
+          xcodebuild test
+          -project Weather.xcodeproj
+          -scheme Weather
+          -destination 'platform=iOS Simulator,name=iPhone Duo,OS=27.2'
+          CODE_SIGNING_ALLOWED=NO
